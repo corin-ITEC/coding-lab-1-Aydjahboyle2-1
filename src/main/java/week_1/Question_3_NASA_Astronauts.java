@@ -2,34 +2,25 @@ package week_1;
 
 import static input.InputUtils.doubleInput;
 
-/**
- To become a NASA astronaut, you need to be between 58 and 76 inches tall, so you
- are not too tall to fit in the spaceship, but are tall enough to reach all the controls.
-
- You also need to be able to swim at least 75 yards, in case you make a water
- landing on your return to earth.
-
- This program asks the user questions about their height and swimming ability.
- It calls a method to check if the user meets NASA's requirements.
- Finish the checkAstronautQualifications method by writing conditional statements
- to determine if the user has potential as a NASA astronaut. The method will return true or false.
-
- There are many ways of doing this too - once you've written and tested a solution,
- can you think of another way of doing it? Make sure your tests still pass.
-
- */
 public class Question_3_NASA_Astronauts {
 
     public static void main(String[] args) {
 
+        // Get the user's height in inches
         double height = doubleInput("How tall are you, in inches?");
+
+        // Get how far the user can swim in yards
         double swimDistance = doubleInput("How far can you swim, in yards?");
 
+        // Call the method to check if the user qualifies
         boolean astronautPotential = checkAstronautQualifications(height, swimDistance);
 
+        // If they qualify, print this message
         if (astronautPotential) {
             System.out.println("You have astronaut potential!");
-        } else {
+        } 
+        // Otherwise, print this message
+        else {
             System.out.println("Sorry, you don't meet NASA's requirements.");
         }
 
@@ -37,16 +28,12 @@ public class Question_3_NASA_Astronauts {
 
     public static boolean checkAstronautQualifications(double height, double swimDistance) {
 
-        // TODO check if the height, and swim distance meet NASA's requirements.
-        // (The user must be at least 58 inches tall but not more than 76 inches tall,
-        // AND they must be able to swim 75 yards or more. )
-        // return true if the user meets these qualifications
-        // return false otherwise
-
-        // TODO remove this line and replace with your own code
-
-        return false;
-
+        // Check if height is between 58 and 76 AND swim distance is at least 75
+        if (height >= 58 && height <= 76 && swimDistance >= 75) {
+            return true;  // meets all requirements
+        } else {
+            return false; // does not meet requirements
+        }
 
     }
 
